@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+<listener class-name="sushilmaurya.SeleniumFramework.Listener"></listener>
+</listeners>
+  <test thread-count="5" name="NormalTest">
+    <classes>
+      <class name="sushilmaurya.SeleniumFramework.ApplyAllMethodTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="ValidationWithTest">
+    <classes>
+      <class name="sushilmaurya.SeleniumFramework.MakeThePageObjectModel"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->
