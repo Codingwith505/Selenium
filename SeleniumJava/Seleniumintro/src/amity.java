@@ -2,9 +2,9 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
+import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -17,22 +17,40 @@ public class amity {
 		// TODO Auto-generated method stub
 
 		WebDriver driver = new ChromeDriver();
-		String name = "Sushil36@amityonline.com";
-		String pass = "AU09022003";
+		String name = "swetasuman@amityonline.com";
+		String pass = "wrgjdzcs3b";
+		String environment = "test";
+		boolean captchaValidation = false;
+
 		driver.get("https://amigo.amityonline.com/login/index.php");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		driver.findElement(By.id("username")).sendKeys(name);
 		driver.findElement(By.id("password")).sendKeys(pass);
+		driver.switchTo().frame(
+    		driver.findElement(By.cssSelector("iframe[title='reCAPTCHA']"))
+			);
+
+		driver.findElement(By.id("recaptcha-anchor")).click();
+
+		driver.switchTo().defaultContent();
+		// driver.findElement(By.className("rc-anchor-checkbox-holder")).click();
+		if(environment.equals("test")) {
+    		captchaValidation = true;
+			}
+		Thread.sleep(50000);	
 		driver.findElement(By.id("loginbtn")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("popupCloseBtn")).click();
 		
 		
 		List<String> courses = new ArrayList<>();
-		courses.add("Introduction to e-Governance");
-		courses.add("Blockchain Technologies");
-		courses.add("Introduction to Data Science");
+		courses.add("Professional Communication");
+		courses.add("Graph Theory and Combinatorics");
+		courses.add("Advanced Software Engineering Principles");
+		courses.add("Advanced Database Management Systems");
+		courses.add("Building the Future of Computing");
+		courses.add("Core Java");
 		for (String course : courses) {
 			
 			try {
