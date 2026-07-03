@@ -19,8 +19,6 @@ public class amity {
 		WebDriver driver = new ChromeDriver();
 		String name = "swetasuman@amityonline.com";
 		String pass = "wrgjdzcs3b";
-		String environment = "test";
-		boolean captchaValidation = false;
 
 		driver.get("https://amigo.amityonline.com/login/index.php");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -34,10 +32,6 @@ public class amity {
 		driver.findElement(By.id("recaptcha-anchor")).click();
 
 		driver.switchTo().defaultContent();
-		// driver.findElement(By.className("rc-anchor-checkbox-holder")).click();
-		if(environment.equals("test")) {
-    		captchaValidation = true;
-			}
 		Thread.sleep(50000);	
 		driver.findElement(By.id("loginbtn")).click();
 		Thread.sleep(2000);
