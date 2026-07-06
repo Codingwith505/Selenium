@@ -6,14 +6,23 @@ public class ArrayFunction {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-        // square pattern 
+        
 
-        //Left Triangle
+        
         System.out.println("Enter the number for pattern");
         int Ta= sc.nextInt();
+        // square pattern 
         squarePattern(Ta);
+        //Left Triangle
         leftAngle(Ta);
+        //Inverted Left Triangle
         invertedLeftTriangle(Ta);
+        //Number Triangle
+        numberTriangle(Ta);
+        //Repeated Number Triangle
+        RepeatedNumberTriangle(Ta);
+
+        
 
     }
 
@@ -36,7 +45,7 @@ public class ArrayFunction {
         }
     }
 
-    //Inverted Left Triangle
+    
 
     static void invertedLeftTriangle(int n){
 
@@ -46,7 +55,23 @@ public class ArrayFunction {
             }
             System.out.println();
         }
-        
+    }
+
+    static void numberTriangle(int n) {
+        for(int i = 1; i<=n;i++){
+            for(int j = 1; j<=i; j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+    static void RepeatedNumberTriangle(int n){
+        for(int i = 1; i<=n; i++){
+            for(int j = 1;j<=i;j++){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
 
     }
 }
