@@ -1,16 +1,16 @@
-public class Question {
+public class CeilingNumber {
 
     public static void main (String[] args){
 
         int[] arr = {2,4,9,11,14,19};
-        int target = 5;
+        int target = 15;
 
         int result = findBSQuestion(arr,target);
         System.out.println(result);
 
     }
     static int findBSQuestion(int[] arr, int target){
-        int mid=0;
+        
         int s = 0;
         int e = arr.length-1;
         if(e==0){
@@ -19,8 +19,7 @@ public class Question {
         boolean isOrder = arr[s]<arr[e];
 
         while(s<=e){
-            mid = s+(e-s)/2;
-            System.out.println(mid);
+            int mid = s+(e-s)/2;
 
             if(target == arr[mid]){
                 return mid;
@@ -47,7 +46,7 @@ public class Question {
             }
              
         }
-        return mid+1;
+        return s;
          
         
     }
