@@ -1,15 +1,27 @@
 public class FindFirstAndLastNumber {
     public static void main(String[] args) {
         int[] arr = {2,4,4,4,5,5,7,7,};
-        int target = 5;
-        searchFirstandLastNumber(arr,target);
+        int target = 4;
+        int[] result = findRange(arr,target);
         
+        System.out.println(result[0]+","+result[1]);
 
     }
 
-    static int searchFirstandLastNumber(int[] arr, int target){
+    static int[] findRange(int[] arr, int target){
+        int[] ans = {-1,-1};
+
+        ans[0] = searchFirstandLastNumber(arr,target,true);
+        ans[1] = searchFirstandLastNumber(arr,target,false);
+
+        return ans;
+
+    }
+
+    static int searchFirstandLastNumber(int[] arr, int target, boolean findFirstNumber){
 
         
+        int ans = -1;
         int s = 0;
         int e = arr.length-1;
         
@@ -26,13 +38,21 @@ public class FindFirstAndLastNumber {
                 
             }
             else{
-                return mid;
+                ans = mid;
+                if(findFirstNumber){
+                    e = mid-1;
+                }
+                else{
+                    s = mid+1;
+                }
+               
             }
-            
-            
+             
         }
         
-        return -1;
+        return ans;
     }
+
+
     
 }
