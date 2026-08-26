@@ -3,7 +3,9 @@ public class RotededArray {
         int[] arr = {4,6,8,10,12,0,1,2};
         int target = 1;
     }
+    //most 
     static int peakValue(int[] arr){
-        
+
     }
+    
 }
