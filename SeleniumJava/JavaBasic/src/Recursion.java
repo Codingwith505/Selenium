@@ -7,6 +7,7 @@ public class Recursion {
 
     }
 
+    //recursion where recursion help to unlimited loop without help of loop
     static void countDown(int i){
         System.out.println(i);
         if(i<0){
