@@ -3,9 +3,9 @@ public class OrderAgnosticBS {
     public static void main(String[] args) {
 
 
-        // int[] arr = {0,23,34,56,78,90,102,120,134};
-        int [] arr = {};
-        int target =90;
+        int[] arr = {90,67,56,36,26,12,2};
+        // int [] arr = {};
+        int target =12;
         int result = orderAgnosticBinarySearch(arr,target);
         System.out.println(result);
         
